@@ -17,7 +17,39 @@ body {
 .wrapper {
   background: no-repeat url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/12005/grid.png);
   background-color: #fff;
+  height: 630px;
+  width: 950px;
   color: #444;
+  display: grid;
+  grid-template-areas: "a a b b e e"
+                       "a a b b e e"
+                       "c c d d e e"
+                       "c c d d e e";
+grid-column-gap: 10px;
+grid-row-gap: 10px;
+}
+
+.a{
+  grid-area: a;
+  align-self: stretch;
+  }
+.b{
+  grid-area: b;
+  align-self: end;
+}
+.c{
+  grid-area: c;
+  align-self: start;
+}
+.d{
+  grid-area: d;
+  align-self: center;
+}
+.e{grid-area: e;}
+
+.box{
+  border: black solid 1px;
+  padding: 0px 100px;
 }
 
 </style>
