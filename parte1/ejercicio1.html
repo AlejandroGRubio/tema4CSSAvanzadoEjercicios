@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+
+    html{
+      background-color: #222222;
+    }
+
+    #cuadricula{
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-auto-flow: column;
+      
+      border: white dotted 1px;
+    }
+
+    .item{
+      background-color: var(--color);
+      text-align: center;
+      color: white;
+      border-radius: 6px;
+
+    }
+
+    #gridGaps{
+      color: grey;
+    }
+
+
+  </style>
+  
+</head>
+
+<body>
+
+<div id="wrapper">
+<div id="gridGaps" class="range">
+  <p>
+  <label>grid-rows-gap: <span id="gridRGap">1</span>px;</label>
+  <input type="range" name="gridRowGap" min="0" max="20" value="1"> 
+  <p>
+  <p>
+  <label>grid-column-gap: <span id="gridCGap">1</span>px;</label>
+  <input type="range" name="gridColumnGap" min="0" max="20" value="1"> 
+  <p>
+  <p style="display:inline; white-space: nowrap;">grid-gap: <span id="spangridRowGap">1</span>px <span id="spangridColumnGap">1</span>px;</p>
+</div>
+
+<div id="cuadricula">
+<div class="item" style="--color:#3E989B;"><p>1</p></div>   
+<div class="item" style="--color:#6DB465;"><p>2</p></div>
+<div class="item" style="--color:#F2C14E;"><p>3</p></div>
+<div class="item" style="--color:#F78154;"><p>4</p></div>
+<div class="item" style="--color:#C87694;"><p>5</p></div>
+<div class="item" style="--color:#3E989B;"><p>6</p></div>   
+<div class="item" style="--color:#6DB465;"><p>7</p></div>
+<div class="item" style="--color:#F2C14E;"><p>8</p></div>
+<div class="item" style="--color:#F78154;"><p>9</p></div>
+<div class="item" style="--color:#C87694;"><p>10</p></div>
+<div class="item" style="--color:#3E989B;"><p>11</p></div>   
+<div class="item" style="--color:#6DB465;"><p>12</p></div>
+<div class="item" style="--color:#F2C14E;"><p>13</p></div>
+<div class="item" style="--color:#F78154;"><p>14</p></div>
+<div class="item" style="--color:#C87694;"><p>15</p></div>  
+</div>
+</div>
+
+</body>
+
+
+
+
+<script>
+
+  let cuadricula = document.getElementById("cuadricula");
+
+
+  var nGridRowGap;
+  var nGridColumnGap;
+
+
+  document.getElementsByName("gridRowGap")[0].addEventListener("input", () =>{
+
+    nGridRowGap = document.getElementsByName("gridRowGap")[0].value;
+
+
+    document.getElementById("gridRGap").innerText = nGridRowGap;
+    document.getElementById("spangridRowGap").innerText = nGridRowGap;
+    cuadricula.style.gridRowGap = (nGridRowGap+"px");
+
+  });
+
+  document.getElementsByName("gridColumnGap")[0].addEventListener("input", () =>{
+
+    nGridColumnGap = document.getElementsByName("gridColumnGap")[0].value;
+
+    document.getElementById("gridCGap").innerText = nGridColumnGap;
+    document.getElementById("spangridColumnGap").innerText = nGridColumnGap;
+    cuadricula.style.gridColumnGap = (nGridColumnGap+"px");
+  });
+
+
+
+
+
+  </script>
+</html>
